@@ -96,6 +96,7 @@ def predict(
     feeds the image through the model getting the output tensor,
     converts that output tensor to probabilities using Softmax,
     and then extracts and formats the top k predictions."""
+    img = img.resize((224, 224))
     image = img_to_array(img)  
     image = np.expand_dims(image, axis=0)
     preds = model.predict(image)
