@@ -179,7 +179,7 @@ if __name__ == '__main__':
                       columns=['Reason', 'Confidence Level'],
                       index=np.linspace(1, 5, 5, dtype=int))
 
-    for idx, p in enumerate(prediction):
+    for idx, p in enumerate(prediction[:5]):
         df.iloc[idx, 0] = p[0]
         df.iloc[idx, 1] = p[1]
     st.write(df.to_html(escape=False), unsafe_allow_html=True)
