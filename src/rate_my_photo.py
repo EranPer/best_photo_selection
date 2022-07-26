@@ -13,6 +13,7 @@ import numpy as np
 
 import tensorflow as tf
 import tensorflow_hub as hub
+from tensorflow.keras.utils import img_to_array, load_img
 
 
 @st.cache()
@@ -95,7 +96,9 @@ def predict(
     feeds the image through the model getting the output tensor,
     converts that output tensor to probabilities using Softmax,
     and then extracts and formats the top k predictions."""
-    formatted_predictions = model.predict(img)
+    image = img_to_array(img)  
+    image = np.expand_dims(image, axis=0)
+    formatted_predictions = model.predict(image)
     # formatted_predictions = model.predict(img, k, index_to_label_dict)
     return formatted_predictions
 
