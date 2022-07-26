@@ -102,7 +102,7 @@ def predict(
     formatted_predictions = list()
     for idx, x in zip(range(0,6), preds[0]):
         formatted_predictions.append([index_to_class_label_dict[idx], np.round(x*100,3)])
-    formatted_predictions = sorted(a, key=lambda x:(x[1]))
+    formatted_predictions = sorted(formatted_predictions, key=lambda x:(x[1]))
     # formatted_predictions = model.predict(img, k, index_to_label_dict)
     return formatted_predictions
 
@@ -175,7 +175,10 @@ if __name__ == '__main__':
     st.title("Here is the image you've selected")
     resized_image = img.resize((336, 336))
     st.image(resized_image)
-    text = "good"
+    if p[0][0] == "good":
+        text = "good"
+    else:
+        text = "bad"
     st.title("Your photo is in" + text + "quality")
     st.title("Here are the five most likely reasons why")
     df = pd.DataFrame(data=np.zeros((5, 2)),
