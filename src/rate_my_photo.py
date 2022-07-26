@@ -11,14 +11,16 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-from resnet_model import ResnetModel
+import tensorflow as tf
+import tensorflow_hub as hub
 
 
 @st.cache()
-def load_model(path: str = 'models/trained_model_resnet50.pt') -> ResnetModel:
+def load_model(path='src/models/inceptionV3_model'):
     """Retrieves the trained model and maps it to the CPU by default,
     can also specify GPU here."""
-    model = ResnetModel(path_to_pretrained_model=path)
+    model = tf.keras.Sequential([hub.KerasLayer(path)])
+    model.build([None, 224, 224, 3])
     return model
 
 
