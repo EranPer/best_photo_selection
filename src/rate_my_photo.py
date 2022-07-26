@@ -180,10 +180,7 @@ if __name__ == '__main__':
                       index=np.linspace(1, 5, 5, dtype=int))
 
     for idx, p in enumerate(prediction):
-        link = 'https://en.wikipedia.org/wiki/' + \
-            p[0].lower().replace(' ', '_')
-        df.iloc[idx,
-                0] = f'<a href="{link}" target="_blank">{p[0].title()}</a>'
+        df.iloc[idx, 0] = p[0]
         df.iloc[idx, 1] = p[1]
     st.write(df.to_html(escape=False), unsafe_allow_html=True)
     st.title(f"Here are three other images of the {prediction[0][0]}")
