@@ -4,6 +4,7 @@
 torch==1.8.1+cpu
 torchvision==0.9.1+cpu
 tensorflow
+tensorflow_hub
 
 #These other packages can be found on PyPi
 streamlit==1.4.0
