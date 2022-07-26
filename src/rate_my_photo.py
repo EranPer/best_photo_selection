@@ -179,7 +179,7 @@ if __name__ == '__main__':
         text = "good"
     else:
         text = "bad"
-    st.title("Your photo is in" + text + "quality")
+    st.title("Your photo is in " + text + " quality")
     st.title("Here are the five most likely reasons why")
     df = pd.DataFrame(data=np.zeros((5, 2)),
                       columns=['Reason', 'Confidence Level'],
