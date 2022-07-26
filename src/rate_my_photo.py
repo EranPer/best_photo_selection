@@ -102,6 +102,7 @@ def predict(
     formatted_predictions = list()
     for idx, x in zip(range(0,6), preds[0]):
         formatted_predictions.append([index_to_class_label_dict[idx], np.round(x*100,3)])
+    formatted_predictions = sorted(formatted_predictions, key=operator.itemgetter(2))
     # formatted_predictions = model.predict(img, k, index_to_label_dict)
     return formatted_predictions
 
@@ -174,14 +175,15 @@ if __name__ == '__main__':
     st.title("Here is the image you've selected")
     resized_image = img.resize((336, 336))
     st.image(resized_image)
-    st.title("Here are the five most likely reasons")
+    st.title("Your photo is in", ,"quality")
+    st.title("Here are the five most likely reasons why")
     df = pd.DataFrame(data=np.zeros((5, 2)),
                       columns=['Reason', 'Confidence Level'],
                       index=np.linspace(1, 5, 5, dtype=int))
 
     for idx, p in enumerate(prediction[:5]):
         df.iloc[idx, 0] = p[0]
-        df.iloc[idx, 1] = p[1]
+        df.iloc[idx, 1] = str(p[1]) + '%'
     st.write(df.to_html(escape=False), unsafe_allow_html=True)
     st.title(f"Here are three other images of the {prediction[0][0]}")
 
