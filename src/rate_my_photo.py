@@ -95,7 +95,8 @@ def predict(
     feeds the image through the model getting the output tensor,
     converts that output tensor to probabilities using Softmax,
     and then extracts and formats the top k predictions."""
-    formatted_predictions = model.predict_proba(img, k, index_to_label_dict)
+    formatted_predictions = model.predict(img)
+    # formatted_predictions = model.predict(img, k, index_to_label_dict)
     return formatted_predictions
 
 
