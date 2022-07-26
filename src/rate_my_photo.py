@@ -99,6 +99,7 @@ def predict(
     image = img_to_array(img)  
     image = np.expand_dims(image, axis=0)
     formatted_predictions = model.predict(image)
+    print(formatted_predictions)
     # formatted_predictions = model.predict(img, k, index_to_label_dict)
     return formatted_predictions
 
@@ -171,9 +172,9 @@ if __name__ == '__main__':
     st.title("Here is the image you've selected")
     resized_image = img.resize((336, 336))
     st.image(resized_image)
-    st.title("Here are the five most likely bird species")
+    st.title("Here are the five most likely reasons")
     df = pd.DataFrame(data=np.zeros((5, 2)),
-                      columns=['Species', 'Confidence Level'],
+                      columns=['Reason', 'Confidence Level'],
                       index=np.linspace(1, 5, 5, dtype=int))
 
     for idx, p in enumerate(prediction):
