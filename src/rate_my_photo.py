@@ -137,15 +137,14 @@ if __name__ == '__main__':
         img = Image.open(file)
         prediction = predict(img, index_to_class_label_dict, model, k=5)
         top_prediction = prediction[0][0]
-        available_images = all_image_files.get(
-            'train').get(top_prediction.upper())
-        examples_of_species = np.random.choice(available_images, size=3)
-        files_to_get_from_s3 = []
+        #available_images = all_image_files.get('train').get(top_prediction.upper())
+        # examples_of_species = np.random.choice(available_images, size=3)
+        # files_to_get_from_s3 = []
 
-        for im_name in examples_of_species:
-            path = os.path.join('train', top_prediction.upper(), im_name)
-            files_to_get_from_s3.append(path)
-        images_from_s3 = load_files_from_s3(keys=files_to_get_from_s3)
+        # for im_name in examples_of_species:
+        #     path = os.path.join('train', top_prediction.upper(), im_name)
+        #     files_to_get_from_s3.append(path)
+        # images_from_s3 = load_files_from_s3(keys=files_to_get_from_s3)
 
     else:
         dataset_type = st.sidebar.selectbox(
@@ -189,7 +188,7 @@ if __name__ == '__main__':
         df.iloc[idx, 0] = p[0]
         df.iloc[idx, 1] = str(p[1]) + '%'
     st.write(df.to_html(escape=False), unsafe_allow_html=True)
-    st.title(f"Here are three other images of the {prediction[0][0]}")
+    # st.title(f"Here are three other images of {prediction[0][0]}")
 
-    st.image(images_from_s3)
+    # st.image(images_from_s3)
     # st.title('How it works:')
