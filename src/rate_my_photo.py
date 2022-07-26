@@ -175,7 +175,8 @@ if __name__ == '__main__':
     st.title("Here is the image you've selected")
     resized_image = img.resize((336, 336))
     st.image(resized_image)
-    st.title("Your photo is in", ,"quality")
+    text = "good"
+    st.title("Your photo is in" + text + "quality")
     st.title("Here are the five most likely reasons why")
     df = pd.DataFrame(data=np.zeros((5, 2)),
                       columns=['Reason', 'Confidence Level'],
