@@ -99,7 +99,6 @@ def predict(
     image = img_to_array(img)  
     image = np.expand_dims(image, axis=0)
     formatted_predictions = model.predict(image)
-    print(formatted_predictions)
     # formatted_predictions = model.predict(img, k, index_to_label_dict)
     return formatted_predictions
 
@@ -168,6 +167,7 @@ if __name__ == '__main__':
         images_from_s3 = load_files_from_s3(keys=files_to_get_from_s3)
         img = images_from_s3.pop(0)
         prediction = predict(img, index_to_class_label_dict, model, 5)
+        st.title(prediction)
 
     st.title("Here is the image you've selected")
     resized_image = img.resize((336, 336))
