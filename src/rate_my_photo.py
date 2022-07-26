@@ -175,8 +175,7 @@ if __name__ == '__main__':
     st.title("Here is the image you've selected")
     resized_image = img.resize((336, 336))
     st.image(resized_image)
-    st.title(str(prediction))
-    if prediction[0][0] == "good":
+    if prediction[0][0] == "Good":
         text = "good"
     else:
         text = "bad"
