@@ -102,7 +102,7 @@ def predict(
     formatted_predictions = list()
     for idx, x in zip(range(0,6), preds[0]):
         formatted_predictions.append([index_to_class_label_dict[idx], np.round(x*100,3)])
-    formatted_predictions = sorted(formatted_predictions, key=operator.itemgetter(2))
+    formatted_predictions = sorted(a, key=lambda x:(x[1]))
     # formatted_predictions = model.predict(img, k, index_to_label_dict)
     return formatted_predictions
 
