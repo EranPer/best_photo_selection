@@ -100,7 +100,7 @@ def predict(
     image = np.expand_dims(image, axis=0)
     preds = model.predict(image)
     for idx, x in zip(range(0,6), preds[0]):
-        st.title("ID: " + idx + " Label: " + index_to_class_label_dict[idx] + "confidence: " + np.round(x*100,3))
+        st.title("ID: " + str(idx) + " Label: " + index_to_class_label_dict[idx] + "confidence: " + str(np.round(x*100,3)))
     class_predicted = np.argmax(preds, axis=1)
     st.title("class_predicted:", class_predicted)
     formatted_predictions = preds
