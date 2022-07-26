@@ -136,7 +136,7 @@ if __name__ == '__main__':
     if file:  # if user uploaded file
         img = Image.open(file)
         prediction = predict(img, index_to_class_label_dict, model, k=5)
-        top_prediction = prediction[0][0]
+        # top_prediction = prediction[0][0]
         #available_images = all_image_files.get('train').get(top_prediction.upper())
         # examples_of_species = np.random.choice(available_images, size=3)
         # files_to_get_from_s3 = []
@@ -174,6 +174,7 @@ if __name__ == '__main__':
     st.title("Here is the image you've selected")
     resized_image = img.resize((336, 336))
     st.image(resized_image)
+    st.title(str(prediction))
     if prediction[0][0] == "Good":
         text = "good"
     else:
