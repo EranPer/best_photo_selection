@@ -99,11 +99,9 @@ def predict(
     image = img_to_array(img)  
     image = np.expand_dims(image, axis=0)
     preds = model.predict(image)
+    formatted_predictions = list()
     for idx, x in zip(range(0,6), preds[0]):
-        st.title("ID: " + str(idx) + " Label: " + index_to_class_label_dict[idx] + "confidence: " + str(np.round(x*100,3)))
-    class_predicted = np.argmax(preds, axis=1)
-    st.title("class_predicted:", class_predicted)
-    formatted_predictions = preds
+        formatted_predictions.append([index_to_class_label_dict[idx], np.round(x*100,3)])
     # formatted_predictions = model.predict(img, k, index_to_label_dict)
     return formatted_predictions
 
