@@ -98,7 +98,12 @@ def predict(
     and then extracts and formats the top k predictions."""
     image = img_to_array(img)  
     image = np.expand_dims(image, axis=0)
-    formatted_predictions = model.predict(image)
+    preds = model.predict(image)
+    for idx, x in zip(range(0,6), preds[0]):
+        st.title("ID: " + idx + " Label: " + index_to_class_label_dict[idx] + "confidence: " + np.round(x*100,3))
+    class_predicted = np.argmax(preds, axis=1)
+    st.title("class_predicted:", class_predicted)
+    formatted_predictions = preds
     # formatted_predictions = model.predict(img, k, index_to_label_dict)
     return formatted_predictions
 
@@ -167,7 +172,6 @@ if __name__ == '__main__':
         images_from_s3 = load_files_from_s3(keys=files_to_get_from_s3)
         img = images_from_s3.pop(0)
         prediction = predict(img, index_to_class_label_dict, model, 5)
-        st.title(prediction)
 
     st.title("Here is the image you've selected")
     resized_image = img.resize((336, 336))
