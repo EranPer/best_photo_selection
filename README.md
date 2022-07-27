@@ -1,15 +1,11 @@
-Best Photo Selection
-==============================
+# Best Photo Selection
 
 Giving a score for how good or bad a photograph is.
 
+A link the website hosting the app:
 
-![Test Badge](https://github.com/Joshmantova/Eagle-Vision/actions/workflows/python-app.yml/badge.svg) 
+[Rate My Photo!](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com/)
 
-# Project Eagle Vision
-Before I go over anything else, here's a link the website hosting the app:
-
-[Eagle Vision Homepage](https://share.streamlit.io/joshmantova/eagle-vision/prod/src/Project_Eagle_Vision.py)
 
 Technologies used: 
 * Python
