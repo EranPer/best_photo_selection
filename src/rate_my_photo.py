@@ -16,7 +16,7 @@ import tensorflow_hub as hub
 from tensorflow.keras.utils import img_to_array, load_img
 
 
-@st.cache()
+@st.cache(suppress_st_warning=True)
 def load_model(path='src/models/inceptionV3_model'):
     """Retrieves the trained model and maps it to the CPU by default,
     can also specify GPU here."""
