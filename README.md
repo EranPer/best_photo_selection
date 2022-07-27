@@ -17,7 +17,6 @@ Technologies used:
 * Tensorflow
 * Streamlit
 
-![](images/web_app.jpg)
 [![web app](images/web_app.jpg)](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com)
 
 # Summary
