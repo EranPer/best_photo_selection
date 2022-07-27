@@ -45,9 +45,11 @@ We tried more advanced models for binary classification usage:
 * EfficientNetB0.
 * EfficientNetB7.
 
-![](images/inceptionv3.jpg)
-
 Because of its highest accuracy, an Inceptionv3 model was used as the final advanced model for our project.
+
+We continued with Inceptionv3 architecture for building a multilabel image classification model.
+
+![](images/inceptionv3.jpg)
 
 # Model Scores
 
