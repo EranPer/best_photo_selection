@@ -68,6 +68,10 @@ The results for the models that were trained on our own organic data were lower 
 | Vgg16 | Internal | Organic | 0.82 | 0.81 | 0.83 |
 | ResNet50 | Internal | Organic | 0.83 | 0.83 | 0.84 |
 
+Here are examples of both the best and the worst samples from the organic test set:
+
+![](images/resnet50_organic_samples.jpg)
+
 We continued with Inceptionv3 architecture for building a multilabel image classification model.
 
 ![](images/inceptionv3.jpg)
