@@ -56,7 +56,7 @@ def load_image(
     return Image.open(path + '/' + filename)
 
 
-@st.cache()
+@st.cache(allow_output_mutation=True)
 def predict(
         img: Image.Image,
         index_to_label_dict: dict,
