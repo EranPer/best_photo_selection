@@ -45,8 +45,6 @@ We tried more advanced models for binary classification usage:
 * EfficientNetB0.
 * EfficientNetB7.
 
-Because of its highest accuracy, an Inceptionv3 model was used as the final advanced model for our project.
-
 # Model Scores
 
 | Method | dataset | Filter set # | Accuracy | Precision (Bad) | Precision (Good) |
@@ -59,12 +57,8 @@ Because of its highest accuracy, an Inceptionv3 model was used as the final adva
 | EfficientNetB0 | flicker30k | Synthetic 3 | 0.86 | 0.82 | 0.91 |
 | EfficientNetB7 | flicker30k | Synthetic 3 | 0.79 | 0.72 | 0.86 |
 
-Here are examples of both a Barn Swallow and a Tree Swallow. Can you identify which is which?
-### Barn Swallow:
-![](imgs/barn_swallow.jpg)
-
-### Tree Swallow:
-![](imgs/tree_swallow.jpg)
+Because of its highest accuracy, an Inceptionv3 model was used as the final advanced model for our project. Here are examples of both the best and the worst samples from the test set:
+![](images/inceptionv3_samples.jpg)
 
 The results for the models that were trained on our own organic data were lower in accuracy compared to the synthetic dataset.
 
