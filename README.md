@@ -17,7 +17,7 @@ Technologies used:
 * Tensorflow
 * Streamlit
 
-![](src/visualization/filter_comparison.png)
+![](images/filter_comparison.png)
 
 # Summary
 This project involved using Deep Convolutional Neural network to create a machine learining application that could classify the quality of an image by different aspects. The final model architecture is a [Inceptionv3](https://en.wikipedia.org/wiki/Inceptionv3) that was initially trained on the [ImageNet Dataset](https://en.wikipedia.org/wiki/ImageNet). Transfer learning was utilized to fine tune the ImageNet model to learn how to classify the quality of an image. After training, the model correctly identified 97% of different aspects of quality, such as lens flare, motion blur, and others, out from training. The trained model was then deployed in an interactive website to allow users to check the quality of their own pictures.
@@ -78,6 +78,8 @@ Project Organization
     │   └── raw            <- The original, immutable data dump.
     │
     ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    │
+    ├── images             <- Images for visualizations on notebooks and other documents.
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
