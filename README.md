@@ -47,13 +47,17 @@ We tried more advanced models for binary classification usage:
 * EfficientNetB0.
 * EfficientNetB7.
 
-Because of its highest accuracy, an Inceptionv3 model was used as the final advanced model for our project.
-
 | Method | dataset | Filter set # | Accuracy | Precision (Bad) | Precision (Good) |
 | --- | --- | --- | --- | --- | --- |
 | Vgg16 | flicker30k | Synthetic 1 | 0.79 | 0.74 | 0.85 |
 | Vgg16 | flicker30k | Synthetic 2 | 0.81 | 0.76 | 0.85 |
 | Vgg16 | flicker30k | Synthetic 3 | 0.87 | 0.89 | 0.86 |
+| ResNet50 | flicker30k | Synthetic 3 | 0.96 | 0.94 | **0.99** |
+| InceptionV3 | flicker30k | Synthetic 3 | **0.97** | **0.98** | 0.95 |
+| EfficientNetB0 | flicker30k | Synthetic 3 | 0.86 | 0.82 | 0.91 |
+| EfficientNetB7 | flicker30k | Synthetic 3 | 0.79 | 0.72 | 0.86 |
+
+Because of its highest accuracy, an Inceptionv3 model was used as the final advanced model for our project.
 
 # Model Scores
 * Training accuracy, weighted recall, weighted precision, and weighted F1 scores were all .99
