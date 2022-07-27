@@ -47,10 +47,6 @@ We tried more advanced models for binary classification usage:
 
 Because of its highest accuracy, an Inceptionv3 model was used as the final advanced model for our project.
 
-We continued with Inceptionv3 architecture for building a multilabel image classification model.
-
-![](images/inceptionv3.jpg)
-
 # Model Scores
 
 | Method | dataset | Filter set # | Accuracy | Precision (Bad) | Precision (Good) |
@@ -69,6 +65,10 @@ Here are examples of both a Barn Swallow and a Tree Swallow. Can you identify wh
 
 ### Tree Swallow:
 ![](imgs/tree_swallow.jpg)
+
+We continued with Inceptionv3 architecture for building a multilabel image classification model.
+
+![](images/inceptionv3.jpg)
 
 # Streamlit App
 
