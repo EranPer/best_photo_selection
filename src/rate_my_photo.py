@@ -68,6 +68,14 @@ def load_files(
     return files
 
 
+def load_image(
+        filename: str = '0.jpg',
+        path: str = 'src/data'
+        ) -> list:
+    """return image with path and filename"""
+    return Image.open(path + '/' + filename)
+
+
 @st.cache()
 def load_s3_file_structure(path: str = 'src/all_image_files.json') -> dict:
     """Retrieves JSON document outining the S3 file structure"""
@@ -161,8 +169,8 @@ if __name__ == '__main__':
         # images_from_s3 = load_files_from_s3(keys=files_to_get_from_s3)
 
     else:
-        dataset_type = st.sidebar.selectbox("Examples", data_split_names)
-        image_files_subset = images_type[dataset_type]
+        image_type = st.sidebar.selectbox("Examples", data_split_names)
+        image_file = images_type[image_type]
 
         '''
         selected_species = st.sidebar.selectbox("Bird Type", types_of_birds)
@@ -183,8 +191,9 @@ if __name__ == '__main__':
             files_to_get_from_s3.append(path)
         '''
         example_images = load_files(keys=images_type)
+        img = load_image(image_file)
         # img = np.random.choice(example_images, size=1)
-        img = example_images.pop(0)
+        # img = example_images.pop(0)
         prediction = predict(img, index_to_class_label_dict, model, 5)
 
     st.title("Here is the image you've selected")
