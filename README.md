@@ -17,7 +17,7 @@ Technologies used:
 * Tensorflow
 * Streamlit
 
-![](images/filter_comparison.jpg)
+![](images/web_app.jpg)
 
 # Summary
 This project involved using Deep Convolutional Neural network to create a machine learining application that could classify the quality of an image by different aspects. The final model architecture is a [Inceptionv3](https://en.wikipedia.org/wiki/Inceptionv3) that was initially trained on the [ImageNet Dataset](https://en.wikipedia.org/wiki/ImageNet). Transfer learning was utilized to fine tune the ImageNet model to learn how to classify the quality of an image. After training, the model correctly identified 97% of different aspects of quality, such as lens flare, motion blur, and others, out from training. The trained model was then deployed in an interactive website to allow users to check the quality of their own pictures.
@@ -29,6 +29,8 @@ There is a rise in the usage of smartphone and digital cameras in recent years. 
 The dataset used for this project was found [on Kaggle](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset). The dataset includes over 30k photos from Flicker. Flickr is an American image hosting and video hosting service, as well as an online community, founded in Canada and headquartered in the United States. It was created by Ludicorp in 2004 and was a popular way for amateur and professional photographers to host high-resolution photos. The hard part was to find "bad" images from a technical aspect, but also from our point of view, as what we consider as a "bad" photo.
 
 That's why we used data augmentation. Data augmentation in data analysis are techniques used to increase the amount of data by adding slightly modified copies of already existing data or newly created synthetic data from existing data. It acts as a regularizer and helps reduce overfitting when training a machine learning model. We created several filters to generate "bad" photos from the "good" set of images. These new synthetic "bad" photos are now too much dark, too much bright, have lens flare and motion blur (movement of the camera) and also have low quality due to JPEG loss.
+
+![](images/filter_comparison.jpg)
 
 The second dataset was our own collection of "bad" photos, in a way of what we consider as "bad" (or "good" in that matter). It was also a challenge to find the "bad" photos in our collection, due to the fact we mostly delete these bad photos from our phones over time. We collected a total number of 1200 photos of "good" and "bad" images and train another model for our organic data.
 
