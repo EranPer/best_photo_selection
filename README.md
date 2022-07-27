@@ -39,13 +39,17 @@ The second dataset was our own collection of "bad" photos, in a way of what we c
 
 A Vgg16 model was used as the baseline binary classification model for our project. We used 7000 "bad" photos and another 7000 "good" photos for training. We got a prediction score for how "good" quality the photo is and by a threshold of 0.5 to decide if the image is "good" or bad".
 
-![](images/inceptionv3.jpg)
-
 We tried more advanced models for binary classification usage:
 * ResNet50.
 * Inceptionv3.
 * EfficientNetB0.
 * EfficientNetB7.
+
+![](images/inceptionv3.jpg)
+
+Because of its highest accuracy, an Inceptionv3 model was used as the final advanced model for our project.
+
+# Model Scores
 
 | Method | dataset | Filter set # | Accuracy | Precision (Bad) | Precision (Good) |
 | --- | --- | --- | --- | --- | --- |
@@ -56,16 +60,6 @@ We tried more advanced models for binary classification usage:
 | InceptionV3 | flicker30k | Synthetic 3 | **0.97** | **0.98** | 0.95 |
 | EfficientNetB0 | flicker30k | Synthetic 3 | 0.86 | 0.82 | 0.91 |
 | EfficientNetB7 | flicker30k | Synthetic 3 | 0.79 | 0.72 | 0.86 |
-
-Because of its highest accuracy, an Inceptionv3 model was used as the final advanced model for our project.
-
-# Model Scores
-* Training accuracy, weighted recall, weighted precision, and weighted F1 scores were all .99
-    * Validation scores were all .98
-    * Holdout test scores were all .98
-* Among all training images, the model had the hardest time classifying the Barn Swallow
-    * Recall score of .78 and F1 score of .87
-    * Most frequently mistook the Barn Swallow for a Tree Swallow
 
 Here are examples of both a Barn Swallow and a Tree Swallow. Can you identify which is which?
 ### Barn Swallow:
