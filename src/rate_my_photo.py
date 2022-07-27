@@ -57,6 +57,17 @@ def load_files_from_s3(
     return s3_files
 
 
+def load_files(
+        keys: list,
+        path: str = 'src/data'
+        ) -> list:
+    """Retrieves files from data folder"""
+    files = []
+    for file in os.listdir(path):
+        files.append(Image.open(file))
+    return files
+
+
 @st.cache()
 def load_s3_file_structure(path: str = 'src/all_image_files.json') -> dict:
     """Retrieves JSON document outining the S3 file structure"""
@@ -168,7 +179,7 @@ if __name__ == '__main__':
         for im in examples_of_species:
             path = os.path.join(s3_key_prefix, selected_species.upper(), im)
             files_to_get_from_s3.append(path)
-        images_from_s3 = load_files_from_s3(keys=files_to_get_from_s3)
+        images_from_s3 = load_files(keys=files_to_get_from_s3)
         img = images_from_s3.pop(0)
         prediction = predict(img, index_to_class_label_dict, model, 5)
 
