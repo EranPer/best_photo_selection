@@ -17,7 +17,7 @@ Technologies used:
 * Tensorflow
 * Streamlit
 
-[![web app](images/web_app.jpg)](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com)
+![](images/image_classification.jpg)
 
 # Summary
 This project involved using Deep Convolutional Neural network to create a machine learining application that could classify the quality of an image by different aspects. The final model architecture is a [Inceptionv3](https://en.wikipedia.org/wiki/Inceptionv3) that was initially trained on the [ImageNet Dataset](https://en.wikipedia.org/wiki/ImageNet). Transfer learning was utilized to fine tune the ImageNet model to learn how to classify the quality of an image. After training, the model correctly identified 97% of different aspects of quality, such as lens flare, motion blur, and others, out from training. The trained model was then deployed in an interactive website to allow users to check the quality of their own pictures.
@@ -56,10 +56,10 @@ Here are examples of both a Barn Swallow and a Tree Swallow. Can you identify wh
 
 # Streamlit App
 
-I created a publically hosted application using Streamlit to showcase this project and allow users to interact with the trained model with a no-code implimentation. Users can select from any of the images I used for training, validation, and testing or they can upload their own image and see how the model would classify it.
+We created a publically hosted application using Streamlit to showcase this project and allow users to interact with the trained model with a no-code implimentation. Users can select from example images or they can upload their own image and see how the model would classify it.
 
-The app outputs a table of the top five predictions including confidence levels of each prediction and a link to the Wikipedia page of the bird species in case users want to learn more.
-![](imgs/st_app_shot.jpeg)
+The app outputs a table of the top five predictions including confidence levels of each prediction
+[![web app](images/web_app.jpg)](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com)
 
 # Future Plans
 I have several ideas to improve this project:
