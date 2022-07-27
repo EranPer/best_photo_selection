@@ -65,6 +65,7 @@ def load_files(
     files = []
     for file in os.listdir(path):
         files.append(Image.open(file))
+    st.write(files)
     return files
 
 
