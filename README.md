@@ -66,6 +66,13 @@ Here are examples of both a Barn Swallow and a Tree Swallow. Can you identify wh
 ### Tree Swallow:
 ![](imgs/tree_swallow.jpg)
 
+The results for the models that were trained on our own organic data were lower in accuracy compared to the synthetic dataset.
+
+| Method | dataset | Filter set # | Accuracy | Precision (Bad) | Precision (Good) |
+| --- | --- | --- | --- | --- | --- |
+| Vgg16 | Internal | Organic | 0.82 | 0.81 | 0.83 |
+| ResNet50 | Internal | Organic | 0.83 | 0.83 | 0.84 |
+
 We continued with Inceptionv3 architecture for building a multilabel image classification model.
 
 ![](images/inceptionv3.jpg)
