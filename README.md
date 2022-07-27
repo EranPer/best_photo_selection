@@ -40,9 +40,8 @@ The second dataset was our own collection of "bad" photos, in a way of what we c
 A Vgg16 model was used as the baseline model for this project. Because this model has been so successful in so many image classification competitions in the past and my best ResNet model score was good enough for me, I did not explore any other model architectures. The model weights were initially trained on the [ImageNet Dataset](https://en.wikipedia.org/wiki/ImageNet) and only the last two layers - including the new top - were fine tuned. This allowed me to train this model and iterate through hyperparameter combinations much more quickly than would have been possible otherwise. I also used my own implementation of [early stopping](https://en.wikipedia.org/wiki/Early_stopping) to prevent overfitting and decrease training time. Pytorch was my weapon of choice as a programming framework because of the ease of use and amount of model customization possible.
 
 ![](images/inceptionv3.jpg)
-An Inceptionv3 model was used as the advanced model for this project.
 
-A Vgg16 model was used as the baseline model for this project.
+An Inceptionv3 model was used as the advanced model for this project.
 
 # Model Scores
 * Training accuracy, weighted recall, weighted precision, and weighted F1 scores were all .99
