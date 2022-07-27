@@ -138,13 +138,15 @@ if __name__ == '__main__':
     st.write(instructions)
 
     file = st.file_uploader('Upload An Image')
-    dtype_file_structure_mapping = {
-        'All Images': 'consolidated',
-        'Images Used To Train The Model': 'train',
-        'Images Used To Tune The Model': 'valid',
-        'Images The Model Has Never Seen': 'test'
+    images_type = {
+        'Bright': '0.jpg',
+        'Dark': '1.jpg',
+        'Good': '2.jpg',
+        'Lens Flare': '3.jpg',
+        'Loss': '4.jpg',
+        'Motion Blur': '5.jpg'
     }
-    data_split_names = list(dtype_file_structure_mapping.keys())
+    data_split_names = list(images_type.keys())
 
     if file:  # if user uploaded file
         img = Image.open(file)
@@ -160,10 +162,10 @@ if __name__ == '__main__':
         # images_from_s3 = load_files_from_s3(keys=files_to_get_from_s3)
 
     else:
-        dataset_type = st.sidebar.selectbox(
-            "Data Portion Type", data_split_names)
-        image_files_subset = dtype_file_structure_mapping[dataset_type]
+        dataset_type = st.sidebar.selectbox("Examples", data_split_names)
+        image_files_subset = images_type[dataset_type]
 
+        '''
         selected_species = st.sidebar.selectbox("Bird Type", types_of_birds)
         available_images = load_list_of_images_available(
             all_image_files, image_files_subset, selected_species.upper())
@@ -180,8 +182,10 @@ if __name__ == '__main__':
         for im in examples_of_species:
             path = os.path.join(s3_key_prefix, selected_species.upper(), im)
             files_to_get_from_s3.append(path)
-        images_from_s3 = load_files(keys=files_to_get_from_s3)
-        img = images_from_s3.pop(0)
+        '''
+        example_images = load_files(keys=images_type)
+        img = np.random.choice(available_images, size=1)
+        # img = images_from_s3.pop(0)
         prediction = predict(img, index_to_class_label_dict, model, 5)
 
     st.title("Here is the image you've selected")
