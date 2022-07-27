@@ -63,8 +63,8 @@ def load_files(
         ) -> list:
     """Retrieves files from data folder"""
     files = []
-    st.write(os.listdir(path))
-    for file in os.listdir(path):
+    st.write(os.listdir(path).items())
+    for file in os.listdir(path).items():
         files.append(Image.open(file))
     return files
 
