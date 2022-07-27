@@ -135,3 +135,5 @@ if __name__ == '__main__':
         df.iloc[idx, 0] = p[0]
         df.iloc[idx, 1] = str(p[1]) + '%'
     st.write(df.to_html(escape=False), unsafe_allow_html=True)
+    
+    st.write('Thie project was developed by Eran Perelman, Asi Sheratzki and Ary Korenvais with the guidance of Morris Alper.')
