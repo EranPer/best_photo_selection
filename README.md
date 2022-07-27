@@ -66,7 +66,7 @@ The results for the models that were trained on our own organic data were lower 
 | Method | dataset | Filter set # | Accuracy | Precision (Bad) | Precision (Good) |
 | --- | --- | --- | --- | --- | --- |
 | Vgg16 | Internal | Organic | 0.82 | 0.81 | 0.83 |
-| ResNet50 | Internal | Organic | 0.83 | 0.83 | 0.84 |
+| ResNet50 | Internal | Organic | **0.83** | **0.83** | **0.84** |
 
 Here are examples of both the best and the worst samples from the organic test set:
 
@@ -84,10 +84,10 @@ The app outputs a table of the top five predictions including confidence levels 
 [![web app](images/web_app.jpg)](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com)
 
 # Future Plans
-I have several ideas to improve this project:
-* Add explanations for how the CNN works with multiple levels of explanation depending on user selection of dropbox
-* If predicted confidence is under some threshold, say something about not being sure about the prediction
-* Potentially have a stacked model where the first model predicts if the image is a bird or not - if not, do something funny to the user for trying to trick me
+We have several ideas to improve this project:
+* Separate the data into clusters by using a similarity model. Run the IncepationV3 model on the clusters and keep the best score photo from each cluster.
+* Generate more classes of synthetic "bad" photos, such as the motion blur that occurs while people moving during the photoshoot.
+* Add more classes for "bad" images, such as closed eyes, looking sideways, and so on.
 
 
 Project Organization
