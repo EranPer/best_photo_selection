@@ -60,7 +60,7 @@ I created a publically hosted application using Streamlit to showcase this proje
 The app outputs a table of the top five predictions including confidence levels of each prediction and a link to the Wikipedia page of the bird species in case users want to learn more.
 ![](imgs/st_app_shot.jpeg)
 
-# Future direcitons
+# Future Plans
 I have several ideas to improve this project:
 * Add explanations for how the CNN works with multiple levels of explanation depending on user selection of dropbox
 * If predicted confidence is under some threshold, say something about not being sure about the prediction
