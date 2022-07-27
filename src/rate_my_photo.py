@@ -184,7 +184,7 @@ if __name__ == '__main__':
             files_to_get_from_s3.append(path)
         '''
         example_images = load_files(keys=images_type)
-        img = np.random.choice(available_images, size=1)
+        img = np.random.choice(example_images, size=1)
         # img = images_from_s3.pop(0)
         prediction = predict(img, index_to_class_label_dict, model, 5)
 
