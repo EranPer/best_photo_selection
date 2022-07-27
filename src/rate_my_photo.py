@@ -1,11 +1,6 @@
 import json
-from io import BytesIO
 from PIL import Image
 import os
-
-import boto3
-from botocore import UNSIGNED  # contact public s3 buckets anonymously
-from botocore.client import Config  # contact public s3 buckets anonymously
 
 import streamlit as st
 import pandas as pd
@@ -42,21 +37,6 @@ def load_index_to_label_dict(
     return index_to_class_label_dict
 
 
-def load_files_from_s3(
-        keys: list,
-        bucket_name: str = 'bird-classification-bucket'
-        ) -> list:
-    """Retrieves files anonymously from my public S3 bucket"""
-    s3 = boto3.client('s3', config=Config(signature_version=UNSIGNED))
-    s3_files = []
-    for key in keys:
-        s3_file_raw = s3.get_object(Bucket=bucket_name, Key=key)
-        s3_file_cleaned = s3_file_raw['Body'].read()
-        s3_file_image = Image.open(BytesIO(s3_file_cleaned))
-        s3_files.append(s3_file_image)
-    return s3_files
-
-
 def load_files(
         keys: list,
         path: str = 'src/data'
@@ -74,25 +54,6 @@ def load_image(
         ) -> list:
     """return image with path and filename"""
     return Image.open(path + '/' + filename)
-
-
-@st.cache()
-def load_s3_file_structure(path: str = 'src/all_image_files.json') -> dict:
-    """Retrieves JSON document outining the S3 file structure"""
-    with open(path, 'r') as f:
-        return json.load(f)
-
-
-@st.cache()
-def load_list_of_images_available(
-        all_image_files: dict,
-        image_files_dtype: str,
-        bird_species: str
-        ) -> list:
-    """Retrieves list of available images given the current selections"""
-    species_dict = all_image_files.get(image_files_dtype)
-    list_of_files = species_dict.get(bird_species)
-    return list_of_files
 
 
 @st.cache()
@@ -158,42 +119,13 @@ if __name__ == '__main__':
     if file:  # if user uploaded file
         img = Image.open(file)
         prediction = predict(img, index_to_class_label_dict, model, k=5)
-        # top_prediction = prediction[0][0]
-        #available_images = all_image_files.get('train').get(top_prediction.upper())
-        # examples_of_species = np.random.choice(available_images, size=3)
-        # files_to_get_from_s3 = []
-
-        # for im_name in examples_of_species:
-        #     path = os.path.join('train', top_prediction.upper(), im_name)
-        #     files_to_get_from_s3.append(path)
-        # images_from_s3 = load_files_from_s3(keys=files_to_get_from_s3)
 
     else:
         image_type = st.sidebar.selectbox("Examples", data_split_names)
         image_file = images_type[image_type]
 
-        '''
-        selected_species = st.sidebar.selectbox("Bird Type", types_of_birds)
-        available_images = load_list_of_images_available(
-            all_image_files, image_files_subset, selected_species.upper())
-        image_name = st.sidebar.selectbox("Image Name", available_images)
-        if image_files_subset == 'consolidated':
-            s3_key_prefix = 'consolidated/consolidated'
-        else:
-            s3_key_prefix = image_files_subset
-        key_path = os.path.join(
-            s3_key_prefix, selected_species.upper(), image_name)
-        files_to_get_from_s3 = [key_path]
-        examples_of_species = np.random.choice(available_images, size=3)
-
-        for im in examples_of_species:
-            path = os.path.join(s3_key_prefix, selected_species.upper(), im)
-            files_to_get_from_s3.append(path)
-        '''
         example_images = load_files(keys=images_type)
         img = load_image(image_file)
-        # img = np.random.choice(example_images, size=1)
-        # img = example_images.pop(0)
         prediction = predict(img, index_to_class_label_dict, model, 5)
 
     st.title("Here is the image you've selected")
@@ -213,7 +145,3 @@ if __name__ == '__main__':
         df.iloc[idx, 0] = p[0]
         df.iloc[idx, 1] = str(p[1]) + '%'
     st.write(df.to_html(escape=False), unsafe_allow_html=True)
-    # st.title(f"Here are three other images of {prediction[0][0]}")
-
-    # st.image(images_from_s3)
-    # st.title('How it works:')
