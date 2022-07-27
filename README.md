@@ -49,7 +49,10 @@ We tried more advanced models for binary classification usage:
 
 Because of its highest accuracy, an Inceptionv3 model was used as the final advanced model for our project.
 
-![](images/inceptionv3.jpg)
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
 
 # Model Scores
 * Training accuracy, weighted recall, weighted precision, and weighted F1 scores were all .99
