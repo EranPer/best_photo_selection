@@ -2,19 +2,18 @@
 
 Giving a score for how good or bad a photograph is.
 
-A link the website hosting the app:
-
-[Rate My Photo!](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com/)
+A link the website hosting the app: [Rate My Photo!](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com/)
 
 
 Technologies used: 
+* Anaconda
 * Python
-* Pytorch
+* Numpy
+* Pandas
+* openCV
+* Pillow
+* Tensorflow
 * Streamlit
-* Docker
-* AWS EC2
-* AWS Sagemaker
-* AWS S3
 
 ![](imgs/Bald-Eagle.jpg)
 
