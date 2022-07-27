@@ -1,6 +1,8 @@
 # Best Photo Selection
 
-Giving a score for how good or bad a photograph is.
+Giving a score for how good or bad a photograph is. Explaining the reasons behind the choice.
+
+This project was developed by Eran Perelman, Asi Sheratzki and Ary Korenvais with the guidance of Morris Alper.
 
 A link the website hosting the app: [Rate My Photo!](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com/)
 
