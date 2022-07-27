@@ -63,19 +63,13 @@ def predict(
         model,
         k: int
         ) -> list:
-    """Transforming input image according to ImageNet paper
-    The Resnet was initially trained on ImageNet dataset
-    and because of the use of transfer learning, I froze all
-    weights and only learned weights on the final layer.
-    The weights of the first layer are still what was
-    used in the ImageNet paper and we need to process
-    the new images just like they did.
-
+    """
     This function transforms the image accordingly,
     puts it to the necessary device (cpu by default here),
     feeds the image through the model getting the output tensor,
     converts that output tensor to probabilities using Softmax,
-    and then extracts and formats the top k predictions."""
+    and then extracts and formats the top k predictions.
+    """
     img = img.resize((224, 224))
     image = img_to_array(img)  
     image = np.expand_dims(image, axis=0)
@@ -84,16 +78,12 @@ def predict(
     for idx, x in zip(range(0,6), preds[0]):
         formatted_predictions.append([index_to_class_label_dict[idx], np.round(x*100,3)])
     formatted_predictions = sorted(formatted_predictions, key=lambda x:(x[1]), reverse=True)
-    # formatted_predictions = model.predict(img, k, index_to_label_dict)
     return formatted_predictions
 
 
 if __name__ == '__main__':
     model = load_model()
     index_to_class_label_dict = load_index_to_label_dict()
-    all_image_files = load_s3_file_structure()
-    types_of_birds = sorted(list(all_image_files['test'].keys()))
-    types_of_birds = [bird.title() for bird in types_of_birds]
 
     st.title('Rate My Photo!')
     instructions = """
