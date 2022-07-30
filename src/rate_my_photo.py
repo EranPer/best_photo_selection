@@ -137,6 +137,6 @@ if __name__ == '__main__':
     st.write(df.to_html(escape=False), unsafe_allow_html=True)
     st.write('\n')
     credits = """
-        This project was developed by <a href="https://www.linkedin.com/in/eran-perelman/">Eran Perelman</a>, Asi Sheratzki and Ary Korenvais with the guidance of Morris Alper.
+        This project was developed by <a href="{https://www.linkedin.com/in/eran-perelman/}">{Eran Perelman}</a>, Asi Sheratzki and Ary Korenvais with the guidance of Morris Alper.
         """
     st.write(credits)
