@@ -136,7 +136,8 @@ if __name__ == '__main__':
         df.iloc[idx, 1] = str(p[1]) + '%'
     st.write(df.to_html(escape=False), unsafe_allow_html=True)
     st.write('\n')
+    cred1 = f'<a href="{https://www.linkedin.com/in/eran-perelman/}" target="_blank">{Eran Perelman}</a>'
     credits = """
-        This project was developed by <a href="{https://www.linkedin.com/in/eran-perelman/}">{Eran Perelman}</a>, Asi Sheratzki and Ary Korenvais with the guidance of Morris Alper.
+        This project was developed by cred1, Asi Sheratzki and Ary Korenvais with the guidance of Morris Alper.
         """
     st.write(credits)
