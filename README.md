@@ -2,7 +2,7 @@
 
 Giving a score for how good or bad a photograph is. Explaining the reasons behind the choice.
 
-This project was developed by Eran Perelman, Asi Sheratzki and Ary Korenvais with the guidance of Morris Alper.
+This project was developed by [Eran Perelman](https://www.linkedin.com/in/eran-perelman/), [Asi Sheratzki](https://www.linkedin.com/in/asi-sheratzki/) and [Ary Korenvais](https://www.linkedin.com/in/arykorenvais/) with the guidance of [Morris Alper](https://www.linkedin.com/in/morris-alper/).
 
 A link the website hosting the app: [Rate My Photo!](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com/)
 
