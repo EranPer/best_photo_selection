@@ -138,6 +138,7 @@ if __name__ == '__main__':
     st.write('\n')
     cred1 = f'<a href="https://www.linkedin.com/in/eran-perelman/" target="_blank">Eran Perelman</a>'
     credits = """
-        This project was developed by cred1, Asi Sheratzki and Ary Korenvais with the guidance of Morris Alper.
+        This project was developed by <a href="https://www.linkedin.com/in/eran-perelman/" target="_blank">Eran Perelman</a>, 
+        Asi Sheratzki and Ary Korenvais with the guidance of Morris Alper.
         """
     st.write(credits)
