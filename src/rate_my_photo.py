@@ -136,7 +136,6 @@ if __name__ == '__main__':
         df.iloc[idx, 1] = str(p[1]) + '%'
     st.write(df.to_html(escape=False), unsafe_allow_html=True)
     st.write('\n')
-    link1 = 
     credits = """
         This project was developed by <a href="{https://www.linkedin.com/in/eran-perelman/}" target="_blank">Eran Perelman</a>, Asi Sheratzki and Ary Korenvais with the guidance of Morris Alper.
         """
