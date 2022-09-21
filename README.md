@@ -4,9 +4,9 @@ Giving a score for how good or bad a photograph is. Explaining the reasons behin
 
 This project was developed by [Eran Perelman](https://www.linkedin.com/in/eran-perelman/), [Asi Sheratzki](https://www.linkedin.com/in/asi-sheratzki/) and [Ary Korenvais](https://www.linkedin.com/in/arykorenvais/) with the guidance of [Morris Alper](https://www.linkedin.com/in/morris-alper/).
 
-[Medium Article](https://medium.com/@asisher/how-to-choose-your-good-photos-by-ai-4dfe0e8bbb10)
+The Medium article: [How to choose your good photos by AI](https://medium.com/@asisher/how-to-choose-your-good-photos-by-ai-4dfe0e8bbb10)
 
-A link for the website hosting the app: [Rate My Photo!](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com/)
+The link for the website hosting the app: [Rate My Photo!](https://eranper-best-photo-selection-srcrate-my-photo-4ipizc.streamlitapp.com/)
 
 Technologies used: 
 * Anaconda
